@@ -1,6 +1,7 @@
 import React, { InputHTMLAttributes, useState } from 'react';
 import EyeOpen from '../assets/icons/EyeOpen';
 import EyeClose from '../assets/icons/EyeClose';
+import { customInput } from '../config.js';
 
 interface CustomInputProps extends InputHTMLAttributes<HTMLInputElement> {
 	label: string;
@@ -28,7 +29,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
 				</label>
 				{forgotPassword && (
 					<button type="button" className="text-white-1 text-sm">
-						Forgot password?
+						{customInput.forgot_password}
 					</button>
 				)}
 			</div>

@@ -1,48 +1,55 @@
-// src/components/SignUpModal.tsx
-
 import React, { useState } from 'react';
 import CustomInput from './CustomInput';
+import { signUpModal } from '../config.js';
 
 interface SignUpModalProps {
-	onClose: () => void;
+	onClose?: () => void;
+	isLogin: boolean;
+	toggleLogin: () => void;
+	handleContinue?: () => void;
 }
 
-const SignUpModal: React.FC<SignUpModalProps> = ({ onClose }) => {
-	const [isLogin, setIsLogin] = useState(false);
-
-	const toggleLogin = () => {
-		setIsLogin(!isLogin);
-	};
-
+const SignUpModal: React.FC<SignUpModalProps> = ({
+	onClose,
+	isLogin,
+	toggleLogin,
+	handleContinue,
+}) => {
 	return (
 		<div className="bg-dark-gray-2 p-6 rounded-lg shadow-lg w-96 relative font-thin">
 			<h3 className="text-sm font-thin text-light-gray text-center">
-				{isLogin ? 'WELCOME BACK' : 'SIGN UP'}
+				{isLogin ? signUpModal.welcome_back : signUpModal.sign_up}
 			</h3>
 			<h2 className="mb-8 text-lg font-bold text-white-1 text-center">
-				{isLogin ? 'Login into your account' : 'Create an account to continue'}
+				{isLogin ? signUpModal.login_into_account : signUpModal.create_account}
 			</h2>
 			<form>
 				{!isLogin ? (
 					<>
-						<CustomInput label="Email" placeholder="Enter your email" />
-						<CustomInput label="Username" placeholder="Enter your username" />
 						<CustomInput
-							label="Password"
-							placeholder="Enter your password"
+							label={signUpModal.email}
+							placeholder={signUpModal.enter_email}
+						/>
+						<CustomInput
+							label={signUpModal.username}
+							placeholder={signUpModal.enter_username}
+						/>
+						<CustomInput
+							label={signUpModal.password}
+							placeholder={signUpModal.enter_password}
 							type="password"
 						/>
 					</>
 				) : (
 					<>
 						<CustomInput
-							label="Email or Username"
-							placeholder="Enter your email or username"
+							label={signUpModal.email_or_username}
+							placeholder={signUpModal.enter_email_or_username}
 						/>
 
 						<CustomInput
-							label="Password"
-							placeholder="Enter your password"
+							label={signUpModal.password}
+							placeholder={signUpModal.enter_password}
 							type="password"
 							forgotPassword={true}
 						/>
@@ -50,23 +57,23 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ onClose }) => {
 				)}
 
 				<button
-					type="submit"
+					onClick={handleContinue}
 					className="w-full px-4 py-2 mb-4 font-semibold text-white-1 bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
 				>
-					{isLogin ? 'Login now' : 'Continue'}
+					{isLogin ? signUpModal.login_now : signUpModal.continue}
 				</button>
 			</form>
 			<p className="text-sm text-left text-light-gray">
-				{isLogin ? 'Not registered yet?' : 'Already have an account?'}{' '}
+				{isLogin ? signUpModal.not_register : signUpModal.already_have_account}{' '}
 				<button className="text-white-1" onClick={toggleLogin}>
-					{isLogin ? 'Register →' : 'Login →'}
+					{isLogin ? signUpModal.register : signUpModal.login}
 				</button>
 			</p>
 			<button
 				className="absolute top-0 right-0 mt-4 mr-4 text-gray-500 hover:text-white focus:outline-none"
 				onClick={onClose}
 			>
-				<span className="sr-only">Close</span>✕
+				<span className="sr-only">{signUpModal.close}</span>✕
 			</button>
 		</div>
 	);
