@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+# Atlys-fe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple UI application with the login and register forms
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To get a local copy up and running follow these simple steps.
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js installed on your computer
+- npm or yarn package manager
 
-- Configure the top-level `parserOptions` property like this:
+### Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1. Clone the repo
+
+   ```
+   git clone https://github.com/sunabhasinha/atlys.git
+   ```
+
+2. ```
+   cd atlys/atlys-fe
+   ```
+3. ```
+   npm install
+   ```
+4. ```
+     npm run dev
+   ```
+
 ```
+### Built With
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- React - The JavaScript library used for building the UI
+- TypeScript - A superset of JavaScript that adds static typing
+- Vite - A modern front-end build tool that aims to provide a faster and leaner
+development experience
+- ESLint - A tool for identifying and reporting on patterns found in
+ECMAScript/JavaScript code
+- Tailwind CSS - A utility-first CSS framework for rapidly building custom
+designs
+```
