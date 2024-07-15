@@ -39,7 +39,3 @@ To get a local copy up and running follow these simple steps.
   ECMAScript/JavaScript code
 - Tailwind CSS - A utility-first CSS framework for rapidly building custom
   designs
-
-```
-
-```
