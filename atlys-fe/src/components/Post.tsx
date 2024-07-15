@@ -1,15 +1,15 @@
-// src/components/Post.tsx
-
 import React from 'react';
+import { post } from '../config.js';
 
 interface PostProps {
 	author: string;
+	id: number;
 	time: string;
 	content: string;
-	commentsCount: string;
+	commentsCount: number;
 	avatar: string;
 	image: string;
-	openSignUpModal: any;
+	openSignUpModal: () => void;
 }
 
 const Post: React.FC<PostProps> = ({
@@ -41,7 +41,7 @@ const Post: React.FC<PostProps> = ({
 			</section>
 			<section className="p-4 bg-dark-gray rounded-md my-6">
 				<div className="flex justify-between">
-					<div className="bg-light-gray-2 rounded-full w-[44px] h-[44px] p-3">
+					<div className="bg-light-gray-2 rounded-full w-[44px] h-[44px] p-4 flex justify-center items-center">
 						{avatar}
 					</div>
 					<p className="mx-2 text-light-gray">{content}</p>
@@ -49,7 +49,9 @@ const Post: React.FC<PostProps> = ({
 			</section>
 			<section>
 				<p></p>
-				<p className="text-sm text-light-gray">{commentsCount} comments</p>
+				<p className="text-sm text-light-gray">
+					{commentsCount} {post.comments}
+				</p>
 			</section>
 		</main>
 	);
