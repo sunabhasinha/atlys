@@ -7,7 +7,7 @@ interface CreatePostProps {
 
 const CreatePost: React.FC<CreatePostProps> = ({ openSignUpModal }) => {
 	return (
-		<div className="space-y-4 sm:w-2/5 my-4 mx-auto font-thin">
+		<div className="space-y-4 sm:w-1/3 my-4 mx-auto font-thin">
 			<div className="mb-8">
 				<h1 className="text-3xl">{createPost.hello}</h1>
 				<p className="text-light-gray mt-4">{createPost.how_are_you_doing}</p>

@@ -38,7 +38,7 @@ const PostList: React.FC = () => {
 		>
 			<CreatePost openSignUpModal={openSignUpModal} />
 
-			<div className="space-y-4 sm:w-2/5 w-full my-0 mx-auto">
+			<div className="space-y-4 sm:w-1/3 w-full my-0 mx-auto">
 				{posts.map((post: Post) => (
 					<Post key={post.id} {...post} openSignUpModal={openSignUpModal} />
 				))}
