@@ -10,7 +10,20 @@
  * @property {number} commentsCount - Number of comments on the post
  */
 
-export const posts = [
+/**
+ * Interface representing a single post.
+ */
+interface Post {
+	id: number;
+	author: string;
+	avatar: string;
+	time: string;
+	content: string;
+	image: string;
+	commentsCount: number;
+}
+
+export const posts: Post[] = [
 	{
 		id: 1,
 		author: 'Theresa Webb',
