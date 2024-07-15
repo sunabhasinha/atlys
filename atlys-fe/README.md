@@ -29,15 +29,17 @@ To get a local copy up and running follow these simple steps.
      npm run dev
    ```
 
-```
 ### Built With
 
 - React - The JavaScript library used for building the UI
 - TypeScript - A superset of JavaScript that adds static typing
 - Vite - A modern front-end build tool that aims to provide a faster and leaner
-development experience
+  development experience
 - ESLint - A tool for identifying and reporting on patterns found in
-ECMAScript/JavaScript code
+  ECMAScript/JavaScript code
 - Tailwind CSS - A utility-first CSS framework for rapidly building custom
-designs
+  designs
+
+```
+
 ```
